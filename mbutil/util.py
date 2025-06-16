@@ -238,7 +238,8 @@ def disk_to_mbtiles(directory_path, mbtiles_file, **kwargs):
                     else:
                         y = int(file_name)
 
-                    if (ext == image_format):
+                    # .mvt is also used as an extension for PBF tiles
+                    if (ext == image_format or (ext == 'mvt' and image_format == 'pbf')):
                         if not silent:
                             logger.debug(' Read tile from Zoom (z): %i\tCol (x): %i\tRow (y): %i' % (z, x, y))
                         cur.execute("""insert into tiles (zoom_level,

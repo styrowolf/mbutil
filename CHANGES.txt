@@ -1,3 +1,6 @@
+### v0.3.1
+* image_format=PBF also accepts .mvt files
+
 ### v0.3.0
 * Preliminary Python 3 support
 
